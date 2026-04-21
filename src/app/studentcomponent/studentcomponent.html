@@ -1,0 +1,45 @@
+<div class="container">
+
+  <h2 class="title">Student Management</h2>
+
+  <div class="layout">
+
+    <!-- Form -->
+    <div class="card">
+      <h3>Add Student</h3>
+
+      <input [(ngModel)]="student.name" placeholder="Enter Name">
+      <input [(ngModel)]="student.phoneNo" placeholder="Enter Phone">
+      <input [(ngModel)]="student.subject" placeholder="Enter Subject">
+
+      <button (click)="save()">Save Student</button>
+    </div>
+
+    <!-- Table -->
+    <div class="card">
+      <h3>Student List</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Subject</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let s of students$ | async">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.phoneNo}}</td>
+            <td>{{s.subject}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
