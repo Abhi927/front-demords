@@ -7,7 +7,7 @@ import { student } from './studentresponse';
   providedIn: 'root',
 })
 export class Student {
- private apiUrl = 'http://172.31.28.57:8081/api/student';
+ private apiUrl = '/api/student';
 private skillList$ = new BehaviorSubject<student[] >([]);
   constructor(private http: HttpClient) {}
 
